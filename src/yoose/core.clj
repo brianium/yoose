@@ -70,5 +70,5 @@
   "Pushes a value into the use case and blocks until output is available"
   [use-case value]
   (-> use-case
-      push! value
+      (push! value)
       pull!!))

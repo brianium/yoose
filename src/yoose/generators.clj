@@ -45,7 +45,8 @@
 
 (defn- fill-queue
   [queue count]
-  (->> (repeatedly count #(gen/generate (port-value)))
+  (->> #(gen/generate (port-value))
+       (repeatedly count)
        (reduce conj queue)))
 
 

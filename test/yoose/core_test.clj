@@ -13,8 +13,7 @@
 
 
 (deftest generated-tests
-  (doseq [test-output (-> (st/enumerate-namespace 'yoose.core)
-                          (st/check {:gen gen-overrides}))
+  (doseq [test-output (st/check (st/enumerate-namespace 'yoose.core) {:gen gen-overrides})
           sym (-> test-output :sym name)]
     (testing sym
       (is (true? (-> test-output :clojure.spec.test.check/ret :result))))))

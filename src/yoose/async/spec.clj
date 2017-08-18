@@ -6,16 +6,7 @@
             [yoose.spec :as yoose-spec]))
 
 
-(defn chan?
-  "Check if the given value is a ManyToMany channel"
-  [value]
-  (and
-    (satisfies? ReadPort value)
-    (satisfies? WritePort value)
-    (satisfies? Channel value)))
-
-
-(s/def ::chan chan?)
+(s/def ::chan async/chan?)
 
 
 (s/def ::in ::chan)
@@ -27,3 +18,11 @@
 (s/fdef async/make-use-case
   :args (s/cat :in ::in :out ::out)
   :ret  ::yoose-spec/use-case)
+
+
+(s/def ::use-case-factory
+  (s/fspec :args (s/cat
+                   :in   ::in
+                   :out  ::out
+                   :deps (s/? any?))
+           :ret  ::yoose-spec/use-case))

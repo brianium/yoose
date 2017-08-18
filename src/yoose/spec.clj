@@ -6,7 +6,7 @@
 (s/def ::use-case yoose/use-case?)
 
 
-(s/def ::pull-handler fn?)
+(s/def ::pull-handler (s/fspec :args (s/cat :x any?)))
 
 
 (s/def ::port-value (complement nil?))

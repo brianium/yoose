@@ -15,4 +15,5 @@
 
                    :source-paths ["src" "test"]
 
-                   :plugins [[venantius/ultra "0.5.1"]]}})
+                   :plugins [[venantius/ultra "0.5.1"]
+                             [lein-kibit "0.1.6-beta2"]]}})
