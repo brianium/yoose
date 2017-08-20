@@ -1,4 +1,4 @@
-(defproject yoose "0.1.0-SNAPSHOT"
+(defproject yoose "0.1.0"
   :description "A small library for use case driven development"
   
   :url "https://github.com/brianium/yoose"
