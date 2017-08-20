@@ -24,5 +24,5 @@
   (s/fspec :args (s/cat
                    :in   ::in
                    :out  ::out
-                   :deps (s/? any?))
+                   :deps (s/* any?))
            :ret  ::yoose-spec/use-case))

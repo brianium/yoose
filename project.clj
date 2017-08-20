@@ -8,6 +8,8 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
                  [org.clojure/core.async "0.3.443"]]
 
+  :jar-exclusions [#"test" #"yussss.gif"]
+
   :source-paths ["src"]
 
   :profiles {:dev {:dependencies [[org.clojure/test.check "0.10.0-alpha2"]]

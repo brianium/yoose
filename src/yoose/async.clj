@@ -45,12 +45,13 @@
 (defmacro defusecase
   "Defines an async use case. A use case is really just a function
   that executes its body in the context of a go loop"
-  ([name [self-binding arg-binding] & body]
-   (let [bindings (if (nil? arg-binding) ['in 'out] ['in 'out arg-binding])]
-     `(def ~name (fn ~bindings
-                   (let [~self-binding (make-use-case ~'in ~'out)]
-                     (go-loop []
-                       ~@body
-                       (recur))
-                     ~self-binding))))))
+  [name [self-binding & args] & body]
+  (let [defaults ['in 'out]
+        bindings (if (nil? args) defaults (into defaults args))]
+    `(def ~name (fn ~bindings
+                  (let [~self-binding (make-use-case ~'in ~'out)]
+                    (go-loop []
+                      ~@body
+                      (recur))
+                    ~self-binding)))))
 
