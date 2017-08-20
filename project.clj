@@ -1,4 +1,4 @@
-(defproject yoose "0.1.0"
+(defproject yoose "0.1.1"
   :description "A small library for use case driven development"
   
   :url "https://github.com/brianium/yoose"
@@ -14,7 +14,4 @@
 
   :profiles {:dev {:dependencies [[org.clojure/test.check "0.10.0-alpha2"]]
 
-                   :source-paths ["src" "test"]
-
-                   :plugins [[venantius/ultra "0.5.1"]
-                             [lein-kibit "0.1.6-beta2"]]}})
+                   :source-paths ["src" "test"]}})

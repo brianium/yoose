@@ -1,5 +1,7 @@
 # yoose
 
+[![Clojars Project](https://img.shields.io/clojars/v/yoose.svg)](https://clojars.org/yoose)
+
 <p align="center">
   <img src="https://raw.github.com/brianium/yoose/master/yussss.gif" alt="Finn Says Yussssss" />
 </p>
