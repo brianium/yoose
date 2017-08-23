@@ -1,7 +1,7 @@
-(ns yoose.async
+(ns brianium.yoose.async
   (:require [clojure.core.async :as async :refer [go go-loop <! <!! >!]]
             [clojure.core.async.impl.protocols :refer [ReadPort WritePort Channel]]
-            [yoose.core :refer [UseCase out in]]))
+            [brianium.yoose :refer [UseCase out in]]))
 
 
 (defn chan?

@@ -1,4 +1,4 @@
-(ns yoose.core)
+(ns brianium.yoose)
 
 
 (defprotocol UseCase

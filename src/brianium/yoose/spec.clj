@@ -1,6 +1,6 @@
-(ns yoose.spec
+(ns brianium.yoose.spec
   (:require [clojure.spec.alpha :as s]
-            [yoose.core :as yoose]))
+            [brianium.yoose :as yoose]))
 
 
 (s/def ::use-case yoose/use-case?)

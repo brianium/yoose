@@ -1,6 +1,6 @@
 # yoose
 
-[![Clojars Project](https://img.shields.io/clojars/v/yoose.svg)](https://clojars.org/yoose)
+[![Clojars Project](https://img.shields.io/clojars/v/brianium/yoose.svg)](https://clojars.org/brianium/yoose)
 
 <p align="center">
   <img src="https://raw.github.com/brianium/yoose/master/yussss.gif" alt="Finn Says Yussssss" />
@@ -20,7 +20,7 @@ The following contrived example is inspired by the [clean todos](https://github.
 
 ```clojure
 (ns yoose.todos
-  (:require [yoose.async :refer :all]))
+  (:require [brianium.yoose.async :refer :all]))
   
 (defusecase create-todo [this db]
   (let [entity (<in this)]
@@ -76,10 +76,10 @@ that some day `yoose.manifold` or `yoose.queue` might burst onto the scene and d
 
 ## Documentation
 
-### yoose.core
+### brianium.yoose
 
-`yoose.core` defines the api for exercising use cases. A use case is something that implements the `yoose.core/UseCase`
-protocol. Most of the functions in `yoose.core` just implement the functions defined by the protocol.
+`brianium.yoose` defines the api for exercising use cases. A use case is something that implements the `brianium.yoose/UseCase`
+protocol. Most of the functions in `brianium.yoose` just implement the functions defined by the protocol.
 
 
 **push!**
@@ -156,17 +156,17 @@ Pushes a values into the use case and blocks until output is available.
 
 **use-case?**
 
-Check if the given value implements the `yoose.core/UseCase` protocol
+Check if the given value implements the `brianium.yoose/UseCase` protocol
 
 ```clojure
 (use-case? value)
 ```
 
-For more information - see the [spec](https://github.com/brianium/yoose/blob/master/src/yoose/spec.clj)
+For more information - see the [spec](https://github.com/brianium/yoose/blob/master/src/brianium/yoose/spec.clj)
 
-##yoose.async
+## brianium.yoose.async
 
-Provides a `core.async` implementation of the `yoose.core/UseCase` protocol.
+Provides a `core.async` implementation of the `brianium.yoose/UseCase` protocol.
 
 **make-use-case**
 
@@ -184,21 +184,21 @@ Creates a new use case backed by `core.async`
 
 **<in**
 
-`yoose.core/<in` redefined as a macro. Since `go` macro translation stops at function creation boundaries - `yoose.core/<in` can't opt into a wrapping `go` block. Using `yoose.async/<in` circumvents this problem.
+`brianium.yoose/<in` redefined as a macro. Since `go` macro translation stops at function creation boundaries - `brianium.yoose/<in` can't opt into a wrapping `go` block. Using `brianium.yoose.async/<in` circumvents this problem.
 
 ```clojure
 ;;; BAD - throws error for using <! outside of go block
 (go
-  (let [input (yoose.core/<in use-case)]))
+  (let [input (brianium.yoose/<in use-case)]))
   
 ;;; OK
 (go
-  (let [input (yoose.async/<in use-case)]))
+  (let [input (brianium.yoose.async/<in use-case)]))
 ```
 
 **>out**
 
-`yoose.core/>out` redefined as a macro. See `yoose.core/<in` rationale above.
+`brianium.yoose/>out` redefined as a macro. See `brianium.yoose/<in` rationale above.
 
 
 **defusecase**

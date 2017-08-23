@@ -1,7 +1,7 @@
-(ns yoose.generators
+(ns brianium.yoose.generators
   (:require [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
-            [yoose.core :as yoose]))
+            [brianium.yoose :as yoose]))
 
 
 (defn- pop-and-return

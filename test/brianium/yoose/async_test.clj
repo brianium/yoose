@@ -1,14 +1,14 @@
-(ns yoose.async-test
+(ns brianium.yoose.async-test
   (:require [clojure.test :refer :all]
             [clojure.test.check]
             [clojure.spec.alpha :as s]
             [clojure.spec.test.alpha :as st]
             [clojure.core.async :refer [<!! go chan]]
-            [yoose.core :refer :all :exclude [<in >out]]
-            [yoose.async :refer :all]
-            [yoose.spec :as yoose]
-            [yoose.async.spec :as async]
-            [yoose.async.generators :as yoose-gen]))
+            [brianium.yoose :refer :all :exclude [<in >out]]
+            [brianium.yoose.async :refer :all]
+            [brianium.yoose.spec :as yoose]
+            [brianium.yoose.async.spec :as async]
+            [brianium.yoose.async.generators :as yoose-gen]))
 
 
 (defn test-async
@@ -62,7 +62,7 @@
 
 
 (deftest generated-tests
-  (doseq [test-output (st/check (st/enumerate-namespace 'yoose.async) {:gen gen-overrides})
+  (doseq [test-output (st/check (st/enumerate-namespace 'brianium.yoose.async) {:gen gen-overrides})
           sym (-> test-output :sym name)]
     (testing sym
       (is (true? (-> test-output :clojure.spec.test.check/ret :result)) test-output))))

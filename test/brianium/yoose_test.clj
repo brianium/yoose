@@ -1,10 +1,10 @@
-(ns yoose.core-test
+(ns brianium.yoose-test
   (:require [clojure.test :refer :all]
             [clojure.test.check]
             [clojure.spec.test.alpha :as st]
-            [yoose.core :refer :all]
-            [yoose.spec :as yoose]
-            [yoose.generators :as yoose-gen]))
+            [brianium.yoose :refer :all]
+            [brianium.yoose.spec :as yoose]
+            [brianium.yoose.generators :as yoose-gen]))
 
 
 (def gen-overrides {::yoose/use-case     (yoose-gen/use-case 1500)
@@ -13,7 +13,7 @@
 
 
 (deftest generated-tests
-  (doseq [test-output (st/check (st/enumerate-namespace 'yoose.core) {:gen gen-overrides})
+  (doseq [test-output (st/check (st/enumerate-namespace 'brianium.yoose) {:gen gen-overrides})
           sym (-> test-output :sym name)]
     (testing sym
       (is (true? (-> test-output :clojure.spec.test.check/ret :result))))))

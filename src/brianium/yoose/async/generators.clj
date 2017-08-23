@@ -1,8 +1,8 @@
-(ns yoose.async.generators
+(ns brianium.yoose.async.generators
   (:require [clojure.core.async :as async]
             [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
-            [yoose.async :as yoose-async]))
+            [brianium.yoose.async :as yoose-async]))
 
 
 (defn chan []

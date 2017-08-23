@@ -1,9 +1,9 @@
-(ns yoose.async.spec
+(ns brianium.yoose.async.spec
   (:require [clojure.spec.alpha :as s]
             [clojure.core.async.impl.protocols :refer [ReadPort WritePort Channel]]
-            [yoose.core :as yoose]
-            [yoose.async :as async]
-            [yoose.spec :as yoose-spec]))
+            [brianium.yoose :as yoose]
+            [brianium.yoose.async :as async]
+            [brianium.yoose.spec :as yoose-spec]))
 
 
 (s/def ::chan async/chan?)
