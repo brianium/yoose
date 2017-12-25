@@ -31,7 +31,7 @@ The following contrived example is inspired by the [clean todos](https://github.
 ```
 
 The `defusecase` is an optional bit of syntactic sugar, but one I find useful. `defusecase` defines a function
-tha is used for creating use cases. A `use-case-factory` if you will. These factories expect to be called
+that is used for creating use cases. A `use-case-factory` if you will. These factories expect to be called
 with an input and output channel a la `core.async`, and any other dependencies needed to do the job. Or in `clojure.spec` parlance:
 
 ```clojure
